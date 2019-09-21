@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>圖庫</title>
+</head>
+
+<body>
+    <button class="btn btn-primary btn-lg" id="btnTrigger" data-toggle="modal" data-target="#myModal"></button>
+    <div class="container">
+        <h1>圖庫區</h1>
+        <button id="btn1">顯示</button>
+        <div id="media">
+        </div>
+        <form action="/post" method="post">
+            name:<input type="text" name="name" id="name">
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+   
+</body>
+
+</html>
+
+<script src="javascripts/allpicsjs.js">
+</script>
+
+<style>
+    #media img {
+        width: 600px;
+    }
+
+    img:hover {
+        cursor: pointer
+    }
+
+    #btnTrigger {
+        display: none;
+    }
+
+</style>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta>
+    <title>Only Javascript</title>
+</head>
+
+<body>
+
+    <div>
+        <div id='block'></div>
+    </div>
+</body>
+
+</html>
+<style>
+    #block {
+        position: absolute;
+        background-color: aqua;
+        width: 300px;
+        padding: 50px;
+        
+    }
+
+</style>
+
+
+<script>
+    const box = document.getElementById('block')
+ 
+    // box.ondragstart=()=>{return false;}
+    box.onmousedown = (e) => {
+        // document.body.append(box);
+        let shiftX = event.clientX - box.getBoundingClientRect().left;
+        let shiftY = event.clientY - box.getBoundingClientRect().top;
+        function moveAt(pageX, pageY) {
+            box.style.left = pageX - shiftX;
+            box.style.top = pageY- shiftY;
+        }
+
+        function onMouseMove(e) {
+            moveAt(e.pageX, e.pageY);
+
+        }
+        document.addEventListener('mousemove', onMouseMove);
+        box.onmouseup = function(e) {
+            document.removeEventListener('mousemove', onMouseMove);
+            //  box.onmouseup = null;
+        };
+
+    }
+
+</script>
